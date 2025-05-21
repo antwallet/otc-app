@@ -1,0 +1,518 @@
+.page {
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+}
+
+.block_1 {
+	background-color: rgba(255, 255, 255, 1);
+	height: auto;
+}
+
+.group_10 {
+	padding: 14px 10px 10rpx 10px;
+	height: auto;
+}
+
+.block_14 {
+	margin-top: 16px;
+}
+
+.text_2 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 18px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 25px;
+	align-self: center;
+	margin: 0 auto
+}
+
+.image_2 {
+	width: 80px;
+	height: 30px;
+	margin-left: 61px;
+}
+
+.image-wrapper_4 {
+	margin-top: 22px;
+}
+
+.label_1 {
+	width: 32px;
+	height: 32px;
+}
+
+.label_2 {
+	width: 24px;
+	height: 24px;
+	margin: 4px 0 4px 255px;
+}
+
+.label_3 {
+	width: 24px;
+	height: 24px;
+	margin: 4px 0 4px 20px;
+}
+
+.text_3 {
+	overflow-wrap: break-word;
+	color: rgba(142, 142, 142, 1);
+	font-size: 18px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 20px;
+	align-self: center;
+	margin-top: 14px;
+	margin: 0 auto;
+}
+
+.text_4 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 32px;
+	font-family: PingFangSC-Semibold;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 44px;
+	align-items: center;
+	margin-top: 16px;
+	margin: 0 auto
+}
+
+.block_15 {
+	align-items: center;
+	margin-top: 20px;
+}
+
+.box_1 {
+	border-radius: 23px;
+	border: 1px solid rgba(51, 51, 51, 1);
+	padding: 15rpx 80rpx;
+}
+
+.box_1:hover {
+	background-color: rgba(3, 80, 255, 1);
+	border-radius: 23px;
+	border: 1px solid rgba(51, 51, 51, 1);
+	padding: 15rpx 80rpx;
+}
+
+.thumbnail_4 {
+	width: 16px;
+	height: 16px;
+	margin: 3px 0 3px 0;
+}
+
+.text-group_1 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 40rpx;
+}
+
+.text-group_1:hover {
+	overflow-wrap: break-word;
+	color: rgba(255, 255, 255, 1);
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 22px;
+}
+
+.thumbnail_5 {
+	width: 10px;
+	height: 16px;
+	margin: 3px 0 3px 0;
+}
+
+.text-group_2 {
+	overflow-wrap: break-word;
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 22px;
+}
+
+.text-group_2:hover {
+	overflow-wrap: break-word;
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 22px;
+}
+
+.box_3 {
+	border-radius: 23px;
+	border: 1px solid rgba(51, 51, 51, 1);
+	padding: 5px 25px 5px 25px;
+	margin-left: 10px;
+}
+
+.box_3:hover {
+	background-color: rgba(3, 80, 255, 1);
+	border-radius: 23px;
+	border: 1px solid rgba(51, 51, 51, 1);
+	padding: 5px 25px 5px 25px;
+	margin-left: 10px;
+}
+
+.image-text_27 {
+	width: 53px;
+}
+
+.thumbnail_6 {
+	width: 16px;
+	height: 16px;
+	margin: 3px 0 3px 0;
+}
+
+.text-group_3 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 22px;
+}
+
+.text-group_3:hover {
+	overflow-wrap: break-word;
+	color: rgba(255, 255, 255, 1);
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 22px;
+}
+
+.text_5 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: left;
+	white-space: nowrap;
+	line-height: 20px;
+	margin-top: 40px;
+}
+
+.block_16 {
+	margin: 0;
+	height: 60px;
+	/* border-bottom: 1px solid rgb(214, 215, 217); */
+	/*实现垂直居中*/
+	align-items: center;
+}
+
+.text-group_20 {}
+
+.text_6 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 36rpx;
+	font-family: PingFangSC-Medium;
+	font-weight: 500;
+	text-align: center;
+	white-space: nowrap;
+	line-height: 80rpx;
+	margin-left: 20rpx;
+}
+
+.text-wrapper_1 {
+	width: 65px;
+	height: 20px;
+	overflow-wrap: break-word;
+	font-size: 0;
+	font-weight: normal;
+	text-align: left;
+	white-space: nowrap;
+	line-height: 20px;
+	margin-top: 6px;
+}
+
+.text_7 {
+	overflow-wrap: break-word;
+	color: rgba(142, 142, 142, 1);
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	white-space: nowrap;
+	line-height: 20px;
+}
+
+.text_8 {
+	overflow-wrap: break-word;
+	color: rgba(63, 168, 151, 1);
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	white-space: nowrap;
+	line-height: 20px;
+}
+
+.text-group_21 {
+	margin-left: 15px;
+
+}
+
+.text_9 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 18px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 24px;
+}
+
+.text_10 {
+	overflow-wrap: break-word;
+	color: rgba(142, 142, 142, 1);
+	font-size: 12px;
+	font-family: PingFangSC-Medium;
+	font-weight: 500;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 20px;
+
+}
+
+.group_6 {
+	background-color: rgba(229, 229, 229, 1);
+	width: 355px;
+	height: 1px;
+	margin-top: 15px;
+}
+
+.block_17 {
+	margin: 15px 15px 0 0;
+}
+
+.image-text_28 {
+	width: 150px;
+}
+
+.image_3 {
+	width: 40px;
+	height: 40px;
+}
+
+.text-group_22 {}
+
+.text_11 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 18px;
+	font-family: PingFangSC-Medium;
+	font-weight: 500;
+	text-align: left;
+	white-space: nowrap;
+	line-height: 24px;
+	margin-top: 16px;
+}
+
+.text-wrapper_2 {
+	width: 65px;
+	height: 20px;
+	overflow-wrap: break-word;
+	font-size: 0;
+	font-weight: normal;
+	text-align: left;
+	white-space: nowrap;
+	line-height: 20px;
+	margin-top: 6px;
+}
+
+.text_12 {
+	overflow-wrap: break-word;
+	color: rgba(142, 142, 142, 1);
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	white-space: nowrap;
+	line-height: 20px;
+}
+
+.text_13 {
+	overflow-wrap: break-word;
+	color: rgba(251, 68, 95, 1);
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	white-space: nowrap;
+	line-height: 20px;
+}
+
+.text-group_23 {}
+
+.text_14 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 18px;
+	font-family: PingFangSC-Medium;
+	font-weight: 500;
+	text-align: center;
+	white-space: nowrap;
+	line-height: 24px;
+}
+
+.text_15 {
+	overflow-wrap: break-word;
+	color: rgba(142, 142, 142, 1);
+	font-size: 12px;
+	font-family: PingFangSC-Medium;
+	font-weight: 500;
+	text-align: center;
+	white-space: nowrap;
+	line-height: 20px;
+	margin: 6px 0 0 42px;
+}
+
+.group_8 {
+	background-color: rgba(229, 229, 229, 1);
+	width: 355px;
+	height: 1px;
+	margin-top: 15px;
+}
+
+.text-wrapper_3 {
+	background-color: rgba(255, 97, 70, 1);
+	border-radius: 22px;
+	padding: 14px 150px 14px 151px;
+	margin-top: 100px;
+}
+
+.text_16 {
+	overflow-wrap: break-word;
+	color: rgba(255, 255, 255, 1);
+	font-size: 18px;
+	font-family: PingFangSC-Medium;
+	font-weight: 500;
+	text-align: center;
+	white-space: nowrap;
+	line-height: 20px;
+}
+
+.group_9 {
+	background-color: rgba(255, 255, 255, 1);
+	width: 375px;
+	margin-top: -1px;
+	justify-content: flex-center;
+	padding: 5px 28px 2px 28px;
+}
+
+.image-text_29 {}
+
+.label_4 {
+	width: 24px;
+	height: 24px;
+}
+
+.text-group_8 {
+	overflow-wrap: break-word;
+	color: rgba(3, 80, 255, 1);
+	font-size: 12px;
+	font-weight: normal;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 16px;
+	margin-top: 2px;
+}
+
+.image-text_30 {
+	margin-left: 74px;
+}
+
+.label_5 {
+	width: 24px;
+	height: 24px;
+}
+
+.text-group_9 {
+	overflow-wrap: break-word;
+	color: rgba(142, 142, 142, 1);
+	font-size: 12px;
+	font-weight: normal;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 16px;
+	margin-top: 2px;
+}
+
+.image-text_31 {
+	margin-left: 75px;
+}
+
+.label_6 {
+	width: 24px;
+	height: 24px;
+	margin-right: 4px;
+}
+
+.text-group_10 {
+	overflow-wrap: break-word;
+	color: rgba(142, 142, 142, 1);
+	font-size: 12px;
+	font-weight: normal;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 16px;
+	margin: 2px 0 0 4px;
+}
+
+.image-text_32 {
+	margin-left: 70px;
+}
+
+.label_7 {
+	width: 24px;
+	height: 24px;
+}
+
+.text-group_11 {
+	overflow-wrap: break-word;
+	color: rgba(142, 142, 142, 1);
+	font-size: 12px;
+	font-weight: normal;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 16px;
+	margin-top: 2px;
+}
+
+.image_4 {
+	width: 375px;
+	height: 34px;
+}
+
+.block_18 {
+	margin: 15px 0 0 0;
+	width: 100%;
+}
+
+.chargePopup {
+	width: 100%;
+	height: 600px;
+}

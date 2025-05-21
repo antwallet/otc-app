@@ -1,0 +1,425 @@
+@keyframes scoreEffect-628cfb64 {
+	0% {
+		opacity: 0;
+		transform: translateY(0) scale(1)
+	}
+
+	50% {
+		opacity: 1;
+		transform: translateY(-200%) scale(1.3)
+	}
+
+	80% {
+		opacity: 1;
+		transform: translateY(-400%) scale(1.3)
+	}
+
+	to {
+		opacity: 0;
+		transform: translateY(-600%) scale(.5)
+	}
+}
+
+[data-v-628cfb64] .score {
+	align-items: center;
+	animation: scoreEffect-628cfb64 1s linear;
+	display: flex
+}
+
+[data-v-628cfb64] .score .score-txt {
+	text-shadow: .0625rem .0625rem .1875rem rgba(0, 0, 0, .8)
+}
+
+[data-v-628cfb64] .score .score-img {
+	height: auto;
+	width: 1.625rem
+}
+
+.progress-hover[data-v-628cfb64] {
+	background: #0e0e0b;
+	border: .03125rem solid hsla(0, 0%, 100%, .1);
+	border-radius: .25rem .25rem .25rem .25rem;
+	display: flex;
+	justify-content: space-between;
+	margin: 1.875rem .9375rem 0;
+	padding: .625rem .9375rem;
+	position: relative;
+	z-index: 18
+}
+
+.progress-hover .banana[data-v-628cfb64] {
+	align-items: center;
+	display: flex
+}
+
+.progress-hover .banana img[data-v-628cfb64] {
+	height: auto;
+	margin-right: .3125rem;
+	width: 1.5rem
+}
+
+.progress-hover .banana .span[data-v-628cfb64] {
+	color: #fff;
+	font-family: Archivo Black;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.1875rem;
+	text-align: left
+}
+
+.progress-hover .hash[data-v-628cfb64] {
+	color: hsla(0, 0%, 100%, .6);
+	font-size: .75rem;
+	line-height: .875rem;
+	text-transform: none
+}
+
+.progress-hover .claim[data-v-628cfb64],
+.progress-hover .hash[data-v-628cfb64] {
+	font-family: PingFang HK;
+	font-style: normal;
+	font-weight: 600;
+	text-align: left
+}
+
+.progress-hover .claim[data-v-628cfb64] {
+	color: #b5ff00;
+	font-size: 1rem;
+	letter-spacing: .03125rem;
+	line-height: 1.03125rem
+}
+
+.header[data-v-628cfb64],
+.progress-hover .claim[data-v-628cfb64] {
+	align-items: center;
+	display: flex
+}
+
+.header[data-v-628cfb64] {
+	padding: .75rem
+}
+
+.header .personal-info[data-v-628cfb64] {
+	flex-grow: 1
+}
+
+.header .personal-info div[data-v-628cfb64] {
+	align-items: center;
+	display: flex;
+	flex-grow: 1;
+	justify-content: flex-start;
+	width: -moz-fit-content;
+	width: fit-content
+}
+
+.header .personal-info div .avatar[data-v-628cfb64] {
+	align-items: center;
+	background-color: #87bf00;
+	border: .125rem solid #b5ff00;
+	border-radius: 50%;
+	box-sizing: border-box;
+	color: #17191f;
+	display: flex;
+	height: 2rem;
+	justify-content: center;
+	margin-right: .3125rem;
+	width: 2rem
+}
+
+.header .personal-info div .name[data-v-628cfb64] {
+	color: #fff;
+	font-size: .875rem;
+	font-weight: bolder
+}
+
+.header .setting[data-v-628cfb64] {
+	height: 1.5rem;
+	width: 1.5rem
+}
+
+.header .setting img[data-v-628cfb64] {
+	display: block;
+	height: auto;
+	width: 100%
+}
+
+.ranking[data-v-628cfb64] {
+	align-items: center;
+	display: flex
+}
+
+.ranking .txt[data-v-628cfb64] {
+	color: #b5ff00;
+	font-size: .8125rem;
+	font-weight: 700;
+	letter-spacing: .03125rem;
+	margin-left: .3125rem;
+	margin-right: .25rem;
+	text-transform: capitalize
+}
+
+.ranking .icon img[data-v-628cfb64] {
+	display: block;
+	height: 1.25rem;
+	width: 1.25rem
+}
+
+.box[data-v-628cfb64] {
+	background-image: url(/_nuxt/img/grid-3.342dbb2.png);
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	margin-bottom: .9375rem;
+	margin-top: .9375rem;
+	position: relative;
+	width: 100%
+}
+
+.box .monkey[data-v-628cfb64] {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	height: 15.625rem;
+	justify-content: center;
+	margin: 1.25rem auto auto;
+	width: 15.625rem
+}
+
+.box .monkey img[data-v-628cfb64] {
+	display: block;
+	width: 100%
+}
+
+.box .monkey .monkey-content[data-v-628cfb64] {
+	height: 100%;
+	position: relative;
+	transform: scale(1.3);
+	width: 100%
+}
+
+.level[data-v-628cfb64] {
+	box-sizing: border-box;
+	justify-content: flex-end;
+	padding: .625rem .9375rem;
+	position: relative;
+	width: 100%;
+	z-index: 1000
+}
+
+.level[data-v-628cfb64],
+.level .level-item[data-v-628cfb64] {
+	align-items: center;
+	display: flex
+}
+
+.level .level-item[data-v-628cfb64] {
+	flex-grow: 1;
+	justify-content: flex-start
+}
+
+.level .level-item:first-child .inner span[data-v-628cfb64] {
+	align-items: center;
+	display: flex;
+	margin-left: .3125rem;
+	margin-top: -.15625rem;
+	padding-left: 7.8125rem
+}
+
+.level .level-item[data-v-628cfb64]:last-child {
+	justify-content: flex-end;
+	margin-top: -.3125rem
+}
+
+.level .level-item:last-child .inner span[data-v-628cfb64] {
+	align-items: center;
+	display: flex;
+	padding-left: 2.75rem
+}
+
+.level .level-item .inner[data-v-628cfb64] {
+	height: 2.6875rem;
+	position: relative
+}
+
+.level .level-item .inner img[data-v-628cfb64] {
+	display: block;
+	height: 100%
+}
+
+.level .level-item .inner span[data-v-628cfb64] {
+	box-sizing: border-box;
+	color: #272a34;
+	font-family: PingFang HK;
+	font-size: .75rem;
+	font-weight: 600;
+	height: 2.6875rem;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%
+}
+
+.progress[data-v-628cfb64] {
+	margin: .875rem 1.875rem 0;
+	position: relative;
+	top: .4375rem;
+	z-index: 18
+}
+
+.progress .progress-icon[data-v-628cfb64] {
+	align-items: center;
+	display: flex;
+	font-size: 1rem;
+	font-weight: bolder
+}
+
+.progress .progress-icon img[data-v-628cfb64] {
+	display: block;
+	height: 1.25rem;
+	width: 1.25rem
+}
+
+.progress .progress-icon strong[data-v-628cfb64] {
+	color: #fff;
+	margin-right: .1875rem
+}
+
+.progress .progress-icon span[data-v-628cfb64] {
+	color: #adaeb2
+}
+
+.progress .progress-bar[data-v-628cfb64] {
+	background: #70706e;
+	border-radius: 1.0625rem;
+	height: .625rem;
+	margin-top: .625rem;
+	overflow: hidden;
+	width: 100%
+}
+
+.progress .progress-bar .progress-bar__inner[data-v-628cfb64] {
+	background-image: linear-gradient(90deg, #e3b5d9 0, #ffbc7e 25%, #fafe66 50%, #9ffd7f);
+	border-radius: 1.0625rem;
+	height: 100%;
+	overflow: hidden
+}
+
+.partner[data-v-628cfb64] {
+	margin-top: 2.0625rem
+}
+
+.partner .partner-tit[data-v-628cfb64] {
+	color: #71716f;
+	font-size: .8125rem;
+	margin: .3125rem 0;
+	text-align: center;
+	text-transform: uppercase
+}
+
+.partner .partner-imgs[data-v-628cfb64] {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: .625rem;
+	opacity: .5
+}
+
+.partner .partner-imgs img[data-v-628cfb64] {
+	display: block;
+	height: 1.25rem;
+	margin: 0 .4375rem;
+	width: auto
+}
+
+.partner .partner-imgs img.ton[data-v-628cfb64] {
+	height: 1rem
+}
+
+.countdown[data-v-628cfb64] {
+	background-color: rgba(0, 0, 0, .5);
+	bottom: 0;
+	flex-direction: column;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%
+}
+
+.countdown[data-v-628cfb64],
+.countdown .time[data-v-628cfb64] {
+	align-items: center;
+	display: flex;
+	justify-content: center
+}
+
+.countdown .time[data-v-628cfb64] {
+	margin-top: 1.875rem
+}
+
+.countdown .time .time-item[data-v-628cfb64] {
+	margin: 0 .4375rem;
+	width: 4.375rem
+}
+
+.countdown .time .time-item .val[data-v-628cfb64] {
+	align-items: center;
+	background-image: url(/_nuxt/img/countdown-bg.d60aacd.png);
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	color: #0c0c09;
+	display: flex;
+	flex-direction: column;
+	font-size: 2.25rem;
+	height: 4.125rem;
+	justify-content: center;
+	text-shadow: 0 .125rem .125rem rgba(0, 0, 0, .2);
+	width: 100%
+}
+
+.countdown .time .time-item .key[data-v-628cfb64] {
+	color: #71716f;
+	font-size: .75rem;
+	margin-top: .625rem;
+	text-align: center;
+	text-transform: uppercase
+}
+
+.countdown .takeBreak[data-v-628cfb64] {
+	color: hsla(0, 0%, 100%, .5);
+	font-size: .8125rem
+}
+
+.countdown .link[data-v-628cfb64] {
+	color: #b5ff00;
+	font-size: .8125rem;
+	margin-top: 2.75rem;
+	text-align: center
+}
+
+.miner-container[data-v-628cfb64] {
+	background: #0b0b08;
+	box-sizing: border-box;
+	margin: 0 auto;
+	max-width: 31.25rem;
+	min-height: calc(100vh - 3.5rem);
+	padding-bottom: .9375rem
+}
+
+@media (max-aspect-ratio:370/667) {
+	.miner-container[data-v-628cfb64] {
+		padding-top: 1.5625rem
+	}
+}
+
+div[lang=zh].miner-container .card-content__bayc .txt[data-v-628cfb64] {
+	font-size: .875rem;
+	position: relative;
+	top: -.03125rem
+}
+
+div[lang=zh].miner-container .countdown .link[data-v-628cfb64] {
+	font-size: .875rem
+}

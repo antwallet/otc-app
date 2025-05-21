@@ -1,0 +1,299 @@
+.page {
+	background-color: #fff;
+	width: 100%;
+	position: relative;
+}
+
+.group_1 {
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.section_5 {
+	width: 100%;
+}
+
+.group_6 {
+	margin: 0 5px 0 21px;
+}
+
+.text_15 {
+	overflow-wrap: break-word;
+	color: rgba(255, 255, 255, 1);
+	font-size: 15px;
+	letter-spacing: -0.30000001192092896px;
+	font-weight: normal;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 21px;
+}
+
+.thumbnail_6 {
+	width: 17px;
+	height: 11px;
+	margin: 4px 0 6px 219px;
+}
+
+.thumbnail_7 {
+	width: 15px;
+	height: 11px;
+	margin: 3px 0 7px 5px;
+}
+
+.image_7 {
+	width: 24px;
+	height: 11px;
+	margin: 3px 0 7px 5px;
+}
+
+.image-wrapper_3 {
+	width: 365px;
+	margin-top: 9px;
+}
+
+.label_3 {
+	width: 40px;
+	height: 44px;
+}
+
+.image_2 {
+	width: 80px;
+	height: 30px;
+	margin: 7px 0 7px 0;
+}
+
+.text_2 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 18px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: center;
+	white-space: nowrap;
+	line-height: 25px;
+}
+
+.list_3 {
+	width: 100%;
+	height: 46px;
+	margin-top: 30px;
+}
+
+.list-items_2 {
+	background-color: rgba(245, 245, 245, 1);
+	border-radius: 5px;
+	width: 46px;
+	height: 46px;
+	margin-right: 5px;
+}
+
+.text_3 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 22px;
+	margin: 100px 0 0 0;
+}
+
+.group_7 {
+	position: fixed;
+	width: 265px;
+	bottom: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.text-wrapper_5 {
+	margin: 16px 0 78px 0;
+}
+
+.text_4 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 20px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 28px;
+	margin: 0 1px 0 2px;
+}
+
+.text_5 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 20px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 28px;
+	margin-top: 33px;
+}
+
+.text_6 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 40rpx;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 56rpx;
+	margin-top: 66rpx;
+}
+
+.image_3 {
+	width: 1px;
+	height: 244px;
+}
+
+.text-wrapper_6 {
+	margin: 16px 0 17px 0;
+}
+
+.text_7 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 20px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 28px;
+}
+
+.text_8 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 20px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 28px;
+	margin-top: 33px;
+}
+
+.text_9 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 20px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 28px;
+	margin-top: 33px;
+}
+
+.text_10 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 20px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 28px;
+	margin-top: 33px;
+}
+
+.image_4 {
+	width: 1px;
+	height: 244px;
+}
+
+.block_1 {
+	margin: 16px 0 26px 0;
+}
+
+.text_11 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 20px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 28px;
+	align-self: center;
+}
+
+.text_12 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 20px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 28px;
+	align-self: center;
+	margin-top: 33px;
+}
+
+.text_13 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 20px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 28px;
+	align-self: center;
+	margin-top: 33px;
+}
+
+.thumbnail_3 {
+	width: 16px;
+	height: 10px;
+	margin-top: 42px;
+}
+
+.image_5 {
+	width: 375px;
+	height: 34px;
+	margin: 778px 0 0 -375px;
+}
+
+.section_6 {
+	width: 100%;
+	margin-top: 100px;
+}
+
+.section_7 {
+	position: relative;
+	margin-top: 50px;
+	width: 100%;
+	/* 或者你需要的宽度 */
+}
+
+.section_8 {
+	position: absolute;
+	/* 设置内部容器为绝对定位 */
+	top: 50%;
+	/* 上边界与外部容器的中线对齐 */
+	left: 50%;
+	/* 左边界与外部容器的中线对齐 */
+	transform: translate(-50%, -50%);
+	/* 通过平移属性将内部容器向左、向上移动自身尺寸的一半，从而达到水平垂直居中效果 */
+}
+
+
+.kefu {
+	position: fixed;
+	bottom: 100rpx;
+	left: 0rpx;
+	right: 0rpx;
+	margin: auto;
+	text-align: center;
+	cursor: pointer;
+}
+/* .kefu:hover{
+	color: #67bbe9;
+} */

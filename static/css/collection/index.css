@@ -1,0 +1,140 @@
+.page {
+	background-color: rgba(255, 255, 255, 1);
+	width: 100%;
+}
+
+.block_1 {
+	width: 100%;
+	background-color: rgba(245, 245, 245, 1);
+}
+
+.group_1 {
+	margin-bottom: 33px;
+	padding: 14px 10px 16px;
+	box-sizing: border-box;
+}
+
+.box_3 {
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 10px;
+	margin: 10px auto;
+	padding: 15px 15px 20px 15px;
+}
+
+.box_4 {}
+
+.text_3 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: left;
+	white-space: nowrap;
+	line-height: 22px;
+	margin-top: 5px;
+}
+
+.block_2 {
+	border-radius: 50%;
+	background-image: url(https://lanhu-dds-backend.oss-cn-beijing.aliyuncs.com/merge_image/imgs/e91913d31af040529670ba0c2859f250_mergehttps://packet-gift.oss-ap-southeast-1.aliyuncs.com/2024/image.png);
+	width: 32px;
+	height: 32px;
+	margin-left: 126px;
+}
+
+.image-text_1 {
+	width: 100%;
+	/* margin: 4px 0 4px 10px; */
+}
+
+.text-group_1 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 500;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 24px;
+}
+
+.thumbnail_3 {
+	width: 14px;
+	height: 8px;
+	margin: 8px 0 8px 0;
+}
+
+/* .text-wrapper_1 {
+  padding: 0 10px;
+} */
+
+.text_4 {
+	overflow-wrap: break-word;
+	color: rgba(181, 181, 181, 1);
+	font-size: 16px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: left;
+	white-space: nowrap;
+	line-height: 26px;
+}
+
+.text-wrapper_2 {
+	background-color: rgba(3, 80, 255, 1);
+	border-radius: 22px;
+	margin: 0 auto;
+	margin-top: 60rpx;
+	width: 80%;
+	padding: 14px 57px;
+	box-sizing: border-box;
+}
+
+.text_5 {
+	overflow-wrap: break-word;
+	color: rgba(255, 255, 255, 1);
+	font-size: 18px;
+	font-family: PingFangSC-Medium;
+	font-weight: 700;
+	text-align: center;
+	white-space: nowrap;
+	line-height: 20px;
+}
+
+.text_6 {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: rgba(142, 142, 142, 1);
+	font-size: 24rpx;
+	font-weight: normal;
+	text-align: center;
+	line-height: 32rpx;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	padding: 0 10rpx;
+	box-sizing: border-box;
+}
+
+.image_3 {
+	width: 375px;
+	height: 34px;
+	margin: 778px 0 0 -375px;
+}
+
+.text_13 {
+	overflow-wrap: break-word;
+	color: rgba(51, 51, 51, 1);
+	font-size: 28px;
+	font-family: PingFangSC-Semibold;
+	font-weight: 700;
+	text-align: center;
+	white-space: nowrap;
+	line-height: 40px;
+	align-self: center;
+}

@@ -1,0 +1,16 @@
+{
+    "id": "gradient-progress",
+    "name": "渐变+动画进度条",
+    "displayName": "渐变+动画进度条",
+    "version": "1.0.0",
+    "description": "一个渐变+动画进度条组件",
+    "keywords": [
+        "js,vue"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}

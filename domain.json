@@ -1,0 +1,6 @@
+{
+	"domain": "http://localhost:18085",
+	"domain_prod": "http://192.168.5.152:18085",
+	"domain_dev": "https://dev.antwallet.org/antwalletbot_front_api",
+	"domain_master": "https://antwallet.org/antwalletbot_front_api"
+} 
