@@ -120,12 +120,6 @@
 
 			if (window.Telegram) {
 				Telegram.WebApp.BackButton.show(); // 显示返回按钮
-				Telegram.WebApp.BackButton.onClick(() => {
-					// 处理返回逻辑
-					uni.redirectTo({
-						url: '/pages/group_receive_redpacket/redpacket_operate'
-					})
-				});
 			}
 		},
 		onUnload() {
@@ -268,9 +262,6 @@
 			},
 			// 跳转提现
 			handleVisibilityChange() {
-				uni.navigateTo({
-					url: '/pages/group_receive_redpacket/redpacket_operate'
-				})
 			},
 		},
 	}

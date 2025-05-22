@@ -197,9 +197,6 @@
 		getAccountInfo,
 		handleUserShareRecord
 	} from '@/api/index.js'
-	import {
-		getOriginalData,
-	} from '@/api/group_receive_redpacket.js';
 	import LottieAnimation from '@/components/LottieAnimation.vue'
 	export default {
 		components: {
@@ -366,18 +363,18 @@
 			},
 			// 分享
 			fenxiang() {
-				var that = this
-				getOriginalData(that.link).then(res => {
-					if (res.data.code === 0) {
-						window.Telegram.WebApp.switchInlineQuery(res.data.data + ' ' + that.link.money + 'USDT', [
-							"users",
-							"groups"
-						])
-						// }
-					} else {
-						this.$refs.uToast.error('请在TG环境操作')
-					}
-				})
+				// var that = this
+				// getOriginalData(that.link).then(res => {
+				// 	if (res.data.code === 0) {
+				// 		window.Telegram.WebApp.switchInlineQuery(res.data.data + ' ' + that.link.money + 'USDT', [
+				// 			"users",
+				// 			"groups"
+				// 		])
+				// 		// }
+				// 	} else {
+				// 		this.$refs.uToast.error('请在TG环境操作')
+				// 	}
+				// })
 			},
 			// 收款人信息
 			init: function() {

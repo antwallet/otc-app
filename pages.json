@@ -48,28 +48,7 @@
 				"navigationStyle": "custom", // 隐藏系统导航栏
 				"bottomNavigation": "none" // 隐藏底部tabbar
 			}
-		}, {
-			"path": "pages/index/applyFor",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"bottomNavigation": "none" // 隐藏底部tabbar
-			}
-		},
-		{
-			"path": "pages/index/activityList",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		},
-		{
-			"path": "pages/index/gambling",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		},
+		}, 
 		{
 			"path": "pages/index/subscribeTo",
 			"style": {
@@ -112,104 +91,7 @@
 			}
 		},
 		{
-			"path": "pages/guessing/index",
-			"style": {
-				"navigationBarTitleText": "竞猜",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		},
-		{
-			"path": "pages/sendpacket/index",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarBackgroundColor": "#F5F1F3"
-			}
-		}, {
-			"path": "pages/sendpacket/send",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarBackgroundColor": "#F5F1F3"
-			}
-		},
-		{
-			"path": "pages/single_receive_redpacket/index",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
-			"path": "pages/single_receive_redpacket/index_condition",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
-			"path": "pages/group_receive_redpacket/share",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
-			"path": "pages/group_receive_redpacket/pinduoduo",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
-			"path": "pages/group_receive_redpacket/index",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
-			"path": "pages/group_receive_redpacket/share_details",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		}, {
-			"path": "pages/group_receive_redpacket/share_condition",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
-			"path": "pages/group_receive_redpacket/index_condition",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
-			"path": "pages/charge/index",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		},
-		{
 			"path": "pages/index/assets",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		},
-		{
-			"path": "pages/single_receive_redpacket/market",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		}, {
-			"path": "pages/single_receive_redpacket/invitation",
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationStyle": "custom" // 隐藏系统导航栏
@@ -251,20 +133,6 @@
 			}
 		},
 		{
-			"path": "pages/single_receive_redpacket/demo",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		},
-		{
-			"path": "pages/single_receive_redpacket/demo2",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		},
-		{
 			"path": "pages/charge_psw/check_index",
 			"style": {
 				"navigationBarTitleText": "",
@@ -272,56 +140,7 @@
 			}
 		},
 		{
-			"path": "pages/sendpacket/chooseRedPacketCover",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		},
-		{
-			"path": "pages/single_receive_redpacket/redpacket_detail",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
-			"path": "pages/group_receive_redpacket/redpacket_detail",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
 			"path": "pages/index/account_trade_detail",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		},
-		{
-			"path": "pages/group_receive_redpacket/redpacket_operate",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom" // 隐藏系统导航栏
-			}
-		},
-		{
-			"path": "pages/single_receive_redpacket/redpacket_operate",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
-			"path": "pages/group_receive_redpacket/redpacket_more",
-			"style": {
-				"navigationStyle": "custom", // 隐藏系统导航栏
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
-			}
-		},
-		{
-			"path": "pages/single_receive_redpacket/redpacket_more",
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationStyle": "custom" // 隐藏系统导航栏

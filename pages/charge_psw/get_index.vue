@@ -48,8 +48,6 @@
 		packetgiftbot
 	} from "@/utils/util.js";
 	import {
-		sendSingleRedPacket,
-		sendGroupRedPacket,
 		handleUserPayment
 	} from '@/api/sendpacket.js';
 	export default {
@@ -60,12 +58,10 @@
 				isShow: true,  //二次密码切换
 				chargePassword: '',  //密码值
 				psd: '',  //密码加密
-				redPacketData: {},  //红包
 				tronWithdrawMoneyData: {},  //提现
 				powerData: {}, //能量
 				premiumData: {}, //会员
 				subscribeToData: {}, //收款
-				tronWithdrawMoneyPddData: {}, //拼多多提现
 				// loadingPageData: {
 				// 	loadingMode: 'circle',
 				// 	loadingText: "",
@@ -95,9 +91,6 @@
 				this.type = options.type
 			}
 			const eventChannel = this.getOpenerEventChannel()
-			eventChannel.on('redPacketData', (data) => {
-				this.redPacketData = data;
-			});
 			eventChannel.on('tronWithdrawMoneyData', (data) => {
 				this.tronWithdrawMoneyData = data;
 			})
@@ -110,10 +103,6 @@
 			eventChannel.on('subscribeToData', (data) => {
 				this.subscribeToData = data;
 				console.log(this.subscribeToData)
-			})
-			eventChannel.on('tronWithdrawMoneyPddData', (data) => {
-				this.tronWithdrawMoneyPddData = data;
-				console.log(this.tronWithdrawMoneyPddData)
 			})
 
 			if (window.Telegram) {
@@ -128,17 +117,9 @@
 						uni.navigateTo({
 							url: '/pages/withdrawal/index'
 						})
-					} else if (this.type == 'send') {
-						uni.navigateTo({
-							url: '/pages/sendpacket/index'
-						})
 					} else if (this.type == 'subscribeTo') {
 						uni.navigateTo({
 							url: '/pages/index/subscribeTo'
-						})
-					} else if (this.type == 'withdrawalPdd') {
-						uni.navigateTo({
-							url: '/pages/group_receive_redpacket/redpacket_operate'
 						})
 					}
 				});
@@ -170,18 +151,6 @@
 						if (beforePage.route == 'pages/withdrawal/index') {
 							// 提现
 							this.applyTronWithdrawMoney()
-						} else if (beforePage.route == 'pages/sendpacket/index') {
-							// 红包
-							// 延迟一段时间后执行操作
-							setTimeout(() => {
-								if (this.redPacketData) {
-									if (this.redPacketData.flag == 1) {
-										this.sendSingleRedPacket()
-									} else if (this.redPacketData.flag == 2) {
-										this.sendGroupRedPacket()
-									}
-								}
-							}, 2000); // 2000 毫秒，即 2 秒后执行操作
 						} else if (beforePage.route == 'pages/market/index') {
 							if (this.powerData.energyType) {
 								// 能量
@@ -192,9 +161,6 @@
 							}
 						} else if (beforePage.route == 'pages/index/subscribeTo') {
 							this.subscrClick()
-						} else if (beforePage.route == 'pages/group_receive_redpacket/redpacket_operate') {
-							// 拼多多提现
-							this.applyTronWithdrawMoneyPdd()
 						} else {
 							this.chargePassword = ''
 						}
@@ -235,84 +201,6 @@
 				console.log(this.chargePassword)
 				this.psd = this.AES.encrypt(this.chargePassword, '94E113C6A898CD39', '94E113C6A898CD39')
 				this.checkChargePsw(this.psd)
-			},
-			// 发送个人红包
-			sendSingleRedPacket: function() {
-				sendSingleRedPacket(this.redPacketData
-				).then(result => {
-					if (result.data && result.data.code === 0) {
-						this.$refs.uToast.success(this.i18n.page.text9)
-						this.hideLoading();
-						uni.navigateTo({
-							url: '/pages/sendpacket/send'
-						})
-						// 延迟一段时间后执行操作二期
-						// setTimeout(() => {
-						// 	this.hideLoading();
-						// 	uni.switchTab({
-						// 		url: '/pages/index/index'
-						// 	})
-						// }, 2000); // 2000 毫秒，即 2 秒后执行操作
-					} else {
-						this.$refs.uToast.error(result.data.msg)
-						// 延迟一段时间后执行操作
-						setTimeout(() => {
-							this.hideLoading();
-							uni.navigateTo({
-								url: '/pages/sendpacket/index'
-							})
-						}, 2000); // 2000 毫秒，即 2 秒后执行操作
-					}
-				}).catch(errors => {
-					this.hideLoading();
-					this.$refs.uToast.error(errors.data.msg)
-					// 延迟一段时间后执行操作
-					setTimeout(() => {
-						this.hideLoading();
-						uni.navigateTo({
-							url: '/pages/sendpacket/index'
-						})
-					}, 2000); // 2000 毫秒，即 2 秒后执行操作
-				})
-			},
-			// 发送群组红包
-			sendGroupRedPacket: function() {
-				sendGroupRedPacket(this.redPacketData).then(result => {
-					this.$refs.uToast.success(this.i18n.page.text9)
-					setTimeout(() => {
-						this.hideLoading();
-						uni.navigateTo({
-							url: '/pages/sendpacket/send?redpacketId=' + result.data
-								.redpacketId
-						})
-					}, 1000); // 2000 毫秒，即 2 秒后执行操作
-				}).catch(errors => {
-					this.$refs.uToast.error(errors.data.msg)
-					// 延迟一段时间后执行操作
-					this.hideLoading()
-					setTimeout(() => {
-						uni.navigateTo({
-							url: '/pages/index/index'
-						});
-					}, 2000); // 2000 毫秒，即 2 秒后执行操作
-				})
-			},
-			// 拼多多提现
-			applyTronWithdrawMoneyPdd() {
-				this.tronWithdrawMoneyPddData.chargePsw = this.psd
-				console.log(this.tronWithdrawMoneyPddData);
-				applyWithdrawal(this.tronWithdrawMoneyPddData).then(res => {
-					this.$refs.uToast.success(this.i18n.page.text10)
-				}).catch(errors => {
-					this.$refs.uToast.error(errors)
-				}).finally(() => {
-					this.hideLoading()
-					setTimeout(() => {
-						uni.navigateTo({
-							url: '/pages/index/index'
-						});
-					}, 2000); // 2000 毫秒，即 2 秒后执行操作
-				})
 			},
 			// 提现
 			applyTronWithdrawMoney() {

@@ -11,9 +11,6 @@
 	} from "./utils/util.js"; //获取网址参数
 	import store from "@/store/index.js";
 	import {
-		getOriginalData,
-	} from '@/api/group_receive_redpacket.js'; //获取网链入参
-	import {
 		loginUser,
 	} from '@/api/user.js'; //login接口
 	import {
@@ -235,159 +232,10 @@
 				uni.setStorageSync('tgWebAppStartParam', tgWebAppSurl)
 				if (tgWebAppSurl) {
 					const new_token = getTokenLocal();
-					var redpacketId;
-					getOriginalData(tgWebAppSurl).then(res => {
-						if (res.data && res.data.code === 0) {
-							redpacketId = res.data.data
-							if (redpacketId) {
-								// 个人
-								if (redpacketId.startsWith('single_redpacket')) {
-									uni.navigateTo({
-										url: `/pages/single_receive_redpacket/index?token=${new_token}&redpacketId=${redpacketId}`
-									})
-									// 群组
-								} else if (redpacketId.startsWith('group_redpacket')) {
-									uni.navigateTo({
-										url: `/pages/group_receive_redpacket/index?token=${new_token}&redpacketId=${redpacketId}`
-									})
-									// 活动
-								} else if (redpacketId.startsWith('share_redpacket')) {
-									let redpacketId_arr = redpacketId.split(":")
-									if (redpacketId_arr.length != 3) {
-										uni.showToast({
-											title: '领取红包失败',
-											icon: 'error',
-											duration: 2000
-										});
-									}
-									uni.navigateTo({
-										url: `/pages/group_receive_redpacket/share_condition?token=${new_token}&redpacketId=${redpacketId_arr[0]}&activityId=${redpacketId_arr[1]}&shareUserId=${redpacketId_arr[2]}`
-									})
-								} else if (redpacketId == 'account_balance_details') {
-									uni.navigateTo({
-										url: '/pages/index/assets'
-									})
-								} else if (redpacketId == 'personal_center') {
-									uni.navigateTo({
-										url: '/pages/user/index'
-									})
-								} else if (redpacketId == 'charge_psw') {
-									uni.navigateTo({
-										url: '/pages/charge_psw/set_index?type=my'
-									})
-								} else if (redpacketId.startsWith('premium_buy_')) {
-									uni.navigateTo({
-										url: '/pages/market/index'
-									})
-								} else if (redpacketId.startsWith('tron_trans_')) {
-									let redpacketId_arr = redpacketId.split(":")
-									uni.navigateTo({
-										url: `/pages/index/subscribeTo?tronTransId=${redpacketId_arr[0]}&shareUserId=${redpacketId_arr[1]}`
-									})
-								} else if (redpacketId == 'lottery') {
-									uni.navigateTo({
-										url: `/pages/index/gambling`
-									})
-								} else if (redpacketId == 'sponsors') {
-									uni.navigateTo({
-										url: `/pages/group_receive_redpacket/redpacket_more`
-									})
-								} else if (redpacketId == 'pddWithdrawal') {
-									uni.navigateTo({
-										url: `/pages/premium_tonenergy/index`
-									})
-								} else {
-									uni.showToast({
-										title: '领取红包失败',
-										icon: 'error',
-										duration: 2000
-									});
-								}
-							} else {
-								uni.showToast({
-									title: '领取红包失败',
-									icon: 'error',
-									duration: 2000
-								});
-							}
-						}
-					})
-				} else {
-					setTimeout(() => {
-						uni.navigateTo({
-							url: '/pages/index/index'
-						});
-					}, 1000);
+					uni.navigateTo({
+						url: '/pages/index/index'
+					});
 				}
-			},
-			// 初始化2-1
-			yaoyiyao(redpacket, activityId, shareUserId) {
-				recordTaskInfo({
-					step: 2,
-					taskStatus: 1,
-					withdrawalType: '',
-					inviteUserId: shareUserId || '',
-					acvityId: activityId || '',
-					redpacketId: redpacket || ''
-				}).then(res => {
-					if (res.data && res.data.code === 0) {
-						uni.navigateTo({
-							url: '/pages/single_receive_redpacket/market'
-						})
-					}
-				}).catch(errors => {
-					this.$refs.uToast.error(errors.data.msg)
-				});
-			},
-			// 先看是不是满足pdd并且是第一次
-			daicantiaozhuan() {
-				queryUserInfo().then(res => {
-					if (res.data && res.data.code === 0) {
-						if (!res.data.data.hasPemission) {
-							// 不满足拼多多
-							this.chushihua()
-						} else {
-							// 满足拼多多，且第一次参与
-							if (res.data.data.step == 0) {
-								let tgWebAppSurl = getUrlParam('tgWebAppStartParam', null) //获取tgWebAppStartParam
-								uni.setStorageSync('tgWebAppStartParam', tgWebAppSurl)
-								// 被人邀请进入miniapp
-								if (tgWebAppSurl) {
-									var redpacketId;
-									const new_token = getTokenLocal();
-									getOriginalData(tgWebAppSurl).then(res => {
-										if (res.data && res.data.code === 0) {
-											redpacketId = res.data.data
-											if (redpacketId) {
-												if (redpacketId.startsWith('share_redpacket')) {
-													let redpacketId_arr = redpacketId.split(":")
-													if (redpacketId_arr.length != 3) {
-														uni.showToast({
-															title: '领取红包失败',
-															icon: 'error',
-															duration: 2000
-														});
-													}
-													uni.navigateTo({
-														url: `/pages/group_receive_redpacket/share_condition?token=${new_token}&redpacketId=${redpacketId_arr[0]}&activityId=${redpacketId_arr[1]}&shareUserId=${redpacketId_arr[2]}`
-													})
-												} else {
-													this.yaoyiyao()
-												}
-											}
-										}
-									})
-								} else {
-									// 自己进入miniapp
-									this.yaoyiyao()
-								}
-
-							}
-						}
-
-					}
-				}).catch(errors => {});
-
 			},
 			// 这里是根据各种场景进入小程序直接跳指定页面
 			getTgWebAppStartParam() {
@@ -465,7 +313,6 @@
 						uni.$emit('appMethodCompleted');
 						// 获取个人信息
 						this.runSomeCode()
-						this.daicantiaozhuan()
 					}
 				}).catch(errors => {
 					uni.showToast({
@@ -478,7 +325,7 @@
 		},
 		onShow: function() {
 			console.log("👍👍我是app.vue页面");
-			uni.$on('callAppMethod', this.getTgWebAppStartParam)
+			// uni.$on('callAppMethod', this.getTgWebAppStartParam)
 		},
 		onHide: function() {
 			// 当小程序隐藏时，也设置标志为 true，这样下次打开时也会显示 loading

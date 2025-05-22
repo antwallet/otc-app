@@ -53,9 +53,6 @@
 	import {
 		sendGroupRedPacket
 	} from '@/api/sendpacket.js';
-	import {
-		getOriginalData,
-	} from '@/api/group_receive_redpacket.js';
 	import store from "@/store/index.js";
 	export default {
 		data() {
@@ -156,22 +153,7 @@
 			},
 			// 立即分享
 			fenxiang() {
-				// let tgWebAppStartParam = getUrlParam('redpacketId', null) //获取tgWebAppStartParam
-				console.log(this.link)
-				var that = this
-				getOriginalData(that.link.link).then(res => {
-					if (res.data.code === 0) {
-
-						window.Telegram.WebApp.switchInlineQuery(res.data.data + ' ' + that.link.money + 'USDT', [
-							"users",
-							"groups"
-						])
-						// }
-					} else {
-						this.isshowPanel = false
-						this.$refs.uToast.error('请在TG环境操作')
-					}
-				})
+			
 			},
 		}
 	}

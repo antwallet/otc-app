@@ -1,7 +1,7 @@
 
 var josn=require('domain.json')  
 // domain_prod本地 domain_dev测试 domain_master正式
-let domain = josn.domain_dev
+let domain = josn.domain
 module.exports = {
 	// 请求域名 格式： https://您的域名
 	// #ifdef MP

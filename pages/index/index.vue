@@ -483,17 +483,6 @@
 		setShareUserIdLocal
 	} from "@/utils/localData.js";
 	import {
-		redpacketQueryActivityByPage,
-		queryLotteryCountdown,
-		lotteryShareInfo,
-		lotteryOpenStatus,
-		cooperationApplicationPermission,
-		statisticsInterface
-	} from '@/api/group_receive_redpacket.js';
-	import {
-		handleReqDoSomethingInActivity
-	} from '@/api/single_receive_redpacket.js';
-	import {
 		getAccountInfo,
 		setPop,
 		queryPermission,
@@ -518,10 +507,6 @@
 	import {
 		Debounce
 	} from '@/utils/debounce.js';
-	import {
-		addSeconds,
-		format
-	} from 'date-fns';
 	export default {
 		mixins: [gaMixin], // 使用mixins将公共方法混入到当前组件
 		components: {
@@ -889,44 +874,10 @@
 			},
 			// 检查抽奖状态
 			async checkLotteryStatus() {
-				try {
-					const res = await lotteryOpenStatus()
-					if (res.data?.code === 0) {
-						this.openStatus = res.data.data
-						if (this.openStatus !== 'close') {
-							this.initLotteryData()
-						}
-					}
-				} catch (error) {
-					console.error('检查抽奖状态失败:', error)
-				}
+				
 			},
 			// 初始化抽奖数据
 			async initLotteryData() {
-				try {
-					// 获取倒计时
-					const countRes = await queryLotteryCountdown()
-					if (countRes.data?.code === 0) {
-						this.allTime = countRes.data.data
-						if (this.allTime === 0) {
-							this.formatTime = this.i18n.gambling.tishi4
-							this.clearTimers()
-						} else {
-							const futureDate = addSeconds(new Date(), this.allTime)
-							this.startCountdown(format(futureDate, 'yyyy-MM-dd HH:mm:ss'))
-							this.startPolling()
-						}
-					}
-
-					// 获取奖池信息
-					const poolRes = await lotteryShareInfo()
-					if (poolRes.data?.code === 0) {
-						this.totalAmount = poolRes.data.data.totalAmount
-						uni.setStorageSync('totalAmount', this.totalAmount)
-					}
-				} catch (error) {
-					console.error('初始化抽奖数据失败:', error)
-				}
 			},
 			// 清理定时器
 			clearTimers() {
@@ -1034,44 +985,7 @@
 			},
 			// 轮询获取数据
 			async pollLotteryData() {
-				try {
-					// 获取最新倒计时
-					const countRes = await queryLotteryCountdown()
-					if (countRes.data?.code === 0) {
-						this.allTime = countRes.data.data
-						if (this.allTime === 0) {
-							this.formatTime = this.i18n.gambling.tishi4
-							this.clearTimers()
-							return
-						}
-						// 更新轮询间隔
-						this.updatePollingInterval()
-						// 重新开始倒计时
-						const futureDate = addSeconds(new Date(), this.allTime)
-						this.startCountdown(format(futureDate, 'yyyy-MM-dd HH:mm:ss'))
-					}
-
-					// 获取最新奖池金额
-					const poolRes = await lotteryShareInfo()
-					if (poolRes.data?.code === 0) {
-						const newAmount = poolRes.data.data.totalAmount
-						const oldAmount = uni.getStorageSync('totalAmount')
-
-						if (newAmount !== oldAmount) {
-							this.chazhi = (Number(newAmount) - Number(oldAmount)).toFixed(3)
-							setInterval(() => {
-								this.chazhi = 0
-							}, 4000)
-						} else {
-							this.chazhi = 0
-						}
-
-						this.totalAmount = newAmount
-						uni.setStorageSync('totalAmount', newAmount)
-					}
-				} catch (error) {
-					console.error('轮询数据失败:', error)
-				}
+				
 			},
 			// -----------------------------------------------
 			// 奖池页面
@@ -1115,49 +1029,11 @@
 
 			// 查看红包详情
 			shareDetails(e) {
-				removeGroupRedpacketIdLocal()
-				setGroupRedpacketIdLocal(e.redpacketId || '') //放在本地缓存
-				removeShareActivityIdLocal()
-				setShareActivityIdLocal(e.activityId || '') //放在本地缓存
-				removeShareUserIdLocal()
-				setShareUserIdLocal(e.shareUserId || '') //放在本地缓存
-				if (this.zuoyouBox) {
-					uni.navigateTo({
-						url: '/pages/group_receive_redpacket/share_details?&type=1'
-					})
-					return
-				}
-				if (this.deviceType == 'Mobile App') {
-					uni.navigateTo({
-						url: '/pages/group_receive_redpacket/share_details?&type=1'
-					})
-					return
-				}
-				if (this.showStop) {
-					this.showStop = false
-					return
-				}
-				this.showStop = false
-				uni.navigateTo({
-					url: '/pages/group_receive_redpacket/share_details?&type=1'
-				})
 			},
 			// 参与活动事件
 			hdSend(e) {
 				console.log(e)
-				removeGroupRedpacketIdLocal()
-				setGroupRedpacketIdLocal(e.redpacketId || '') //放在本地缓存
-				removeShareActivityIdLocal()
-				setShareActivityIdLocal(e.activityId || '') //放在本地缓存
-				removeShareUserIdLocal()
-				setShareUserIdLocal(e.shareUserId || '') //放在本地缓存
-				// 统计活动总点击量
-				this.statistic(e.activityId)
-				if (e.canRecieve) {
-					this.openGroupRedPacket(e)
-				} else {
-					this.shareDetails(e)
-				}
+
 			},
 			// 缩短截止时间
 			formattedEndTime(e) {
@@ -1171,35 +1047,6 @@
 			},
 			// 首页活动列表
 			hdList() {
-				redpacketQueryActivityByPage(1, 10).then(res => {
-					if (res.data && res.data.code === 0) {
-						if (res.data.data.length == 0) {
-							this.donglist = []
-							localStorage.setItem('donglist', JSON.stringify(this.donglist));
-							return
-						}
-						var arr = res.data.data.list
-						if (arr.length > 0) {
-							for (let i = 0; i < arr.length; i++) {
-								arr[i].endTime = this.formattedEndTime(arr[i].endTime)
-							}
-						}
-						if (arr == []) {
-							this.donglist = arr;
-							localStorage.setItem('donglist', JSON.stringify(arr));
-						} else if (JSON.stringify(arr) !== JSON.stringify(this.donglist)) {
-							// 数据有变化，更新页面
-							this.donglist = arr;
-							localStorage.setItem('donglist', JSON.stringify(arr));
-						} else {
-							// 数据无变化，不更新页面
-						}
-					}
-
-				}).catch(errors => {
-					this.$refs.uToast.error(errors.msg)
-				});
-
 
 			},
 			pddhuidiao() {
@@ -1287,54 +1134,11 @@
 			},
 			// 判断入口去向
 			pddRukou() {
-				if (this.queryData.withdrawalStatus == null || this.queryData.withdrawalStatus == '') {
-					this.showPdd = true
-				} else {
-					uni.navigateTo({
-						url: '/pages/group_receive_redpacket/redpacket_operate'
-					})
-				}
 			},
 			// 拼多多入口去向
 			pinduoduo() {
-				if (this.queryData.step == 1) {
-					// 当第一次参加,需要变更步数
-					recordTaskInfo({
-						step: 2,
-						taskStatus: 1,
-						withdrawalType: '',
-						withdrawalType: '',
-						inviteUserId: '',
-						acvityId: '',
-						redpacketId: ''
-					}).then(res => {
-						if (res.data && res.data.code === 0) {
-							uni.navigateTo({
-								url: '/pages/single_receive_redpacket/market'
-							})
-						}
-					}).catch(errors => {
-						this.$refs.uToast.error(errors.data.msg)
-					});
-				} else if (this.queryData.step == 9 && this.queryData.taskStatus == 0) {
-					uni.navigateTo({
-						url: '/pages/group_receive_redpacket/redpacket_operate'
-					})
-				} else if (this.queryData.step >= 8) {
-					// 前面小卡拉米都完成了
-					uni.navigateTo({
-						url: '/pages/group_receive_redpacket/redpacket_more'
-					})
-				} else {
-					uni.navigateTo({
-						url: '/pages/single_receive_redpacket/market'
-					})
-				}
 			},
 			demo() {
-				uni.navigateTo({
-					url: '/pages/single_receive_redpacket/demo'
-				})
 			},
 			// 语言切换弹框
 			selectClickYy(index) {
@@ -1397,54 +1201,6 @@
 					url: '/pages/guessing/index'
 				})
 			},
-			// 开红包
-			openGroupRedPacket(e) {
-				// back 从哪来返回到哪标志
-				if (e.conditionSize > 0) {
-					// 从首页过来的
-					uni.navigateTo({
-						url: `/pages/group_receive_redpacket/share_condition?token=${this.token}&redpacketId=${e.redpacketId}&sort=0&tongji=0&activityId=${e.activityId}&back=''`
-					})
-				} else if (window.Telegram) {
-					handleReqDoSomethingInActivity(1, 'receive_share_redpacket', {
-						shareUserId: e.shareUserId,
-						redpacketId: e.redpacketId,
-						activityId: e.activityId,
-						inlineMessageId: '1111'
-					}).then(res => {
-						let receiveMoney = res.data.data.receiveMoney
-						let sort = res.data.data.sort
-						this.statisticOk(e.activityId)
-						uni.navigateTo({
-							url: `/pages/group_receive_redpacket/share_details?redpacketId=${e.redpacketId}&receiveMoney=${receiveMoney}&sort=${sort}&activityId=${e.activityId}&back=''`
-						})
-					}).catch(errors => {
-						this.$refs.uToast.error(errors.message, 3000)
-						uni.navigateTo({
-							url: `/pages/group_receive_redpacket/share_details?redpacketId=${e.redpacketId}&receiveMoney=0&sort=0&activityId=${e.activityId}&back=''`
-						})
-					});
-				} else {
-					handleReqDoSomethingInActivity(1, 'receive_share_redpacket', {
-						shareUserId: e.shareUserId,
-						redpacketId: e.redpacketId,
-						activityId: e.activityId,
-						inlineMessageId: '1111'
-					}).then(res => {
-						let receiveMoney = res.data.data.receiveMoney
-						let sort = res.data.data.sort
-						uni.navigateTo({
-							url: `/pages/group_receive_redpacket/share_details?redpacketId=${e.redpacketId}&receiveMoney=${receiveMoney}&sort=${sort}&activityId=${e.activityId}&back=''`
-						})
-					}).catch(errors => {
-						this.$refs.uToast.error(errors.message, 3000)
-						uni.navigateTo({
-							url: `/pages/group_receive_redpacket/share_details?redpacketId=${e.redpacketId}&receiveMoney=0&sort=0&activityId=${e.activityId}&back=''`
-						})
-					});
-				}
-			},
-
 			// 会员页面跳转
 			gomarket() {
 				uni.navigateTo({
@@ -1509,34 +1265,6 @@
 			},
 			// 分享好友获得开包机会
 			doShareRedpacketShare: function(e) {
-				this.debounce.use(() => {
-					// 统计分享次数
-					this.statisticFx(e.activityId)
-					this.$nextTick(() => {
-						handleReqDoSomethingInActivity(1, 'share_redpacket_share', {
-							activityId: e.activityId,
-							redpacketId: e.redpacketId,
-							shareUserId: e.shareUserId
-						}).then(res => {
-							if (res.data && res.data.code === 0) {
-								let innerMode = res.data.data.redpacketId + ":" + res
-									.data.data
-									.activityId + ":" + this.userInfo.userId
-								if (window.Telegram) {
-									window.Telegram.WebApp.switchInlineQuery(innerMode,
-										[
-											"users",
-											"groups"
-										])
-								} else {
-									this.$refs.uToast.error('请在TG环境操作')
-								}
-							}
-						}).catch(errors => {
-							this.$refs.uToast.error(errors.message)
-						});
-					})
-				}, 500);
 			},
 			// 引导关闭
 			yindao() {

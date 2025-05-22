@@ -87,9 +87,6 @@
 		tronTransList,
 		handleStopPayment
 	} from '@/api/sendpacket.js'
-	import {
-		getOriginalData,
-	} from '@/api/group_receive_redpacket.js';
 	export default {
 		data() {
 			return {
